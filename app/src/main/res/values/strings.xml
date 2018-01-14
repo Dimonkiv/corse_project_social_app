@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Social app</string>
+    <string name="main_activity_welcome">Hello, guys</string>
+    <string name="main_activity_description">It is a my first app</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="register_now">Register now!</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="enter_data">Enter data!</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="forgot_passwort_description">Hello! Did you forgot password? Create new!</string>
+    <string name="send_new_password">Send new password</string>
+    <string name="email">Email</string>
+
+
+</resources>
