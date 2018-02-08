@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item android:id="@+id/profile" android:title="profile" android:icon="@drawable/profile_icon"/>
+    <item android:id="@+id/alboms" android:title="albums" android:icon="@drawable/alboms_icon"/>
+    <item android:id="@+id/posts" android:title="posts" android:icon="@drawable/posts_icon"/>
+    <item android:id="@+id/todos" android:title="todos" android:icon="@drawable/todos_icon"/>
+    <item android:id="@+id/logout" android:title="logout" android:icon="@drawable/logout_icon"/>
 </menu>

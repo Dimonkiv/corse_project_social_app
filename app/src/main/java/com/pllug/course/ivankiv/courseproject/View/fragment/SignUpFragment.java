@@ -1,4 +1,4 @@
-package com.pllug.course.ivankiv.courseproject.fragment;
+package com.pllug.course.ivankiv.courseproject.View.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,23 +10,26 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.pllug.course.ivankiv.courseproject.Presenter.SignUpPresenter;
 import com.pllug.course.ivankiv.courseproject.R;
-import com.pllug.course.ivankiv.courseproject.RegistrationActivity;
+import com.pllug.course.ivankiv.courseproject.View.Activity.RegistrationActivity;
+import com.pllug.course.ivankiv.courseproject.View.Interface.ContractSignUp;
 
 /**
  * Created by iw97d on 13.01.2018.
  */
 
-public class SignUpFragment extends Fragment implements View.OnClickListener  {
+public class SignUpFragment extends Fragment implements View.OnClickListener, ContractSignUp.View {
     View root;
     private EditText name, surname,login, email, password, confirmPassword;
     private Button btn;
     private TextView goToSignIn, goToForgotPassword;
+    private SignUpPresenter presenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.sign_up_fragment, container, false);
-
+        presenter = new SignUpPresenter(this);
         //Зв’язуємо xml елементи з кодом
         initView();
         return root;
@@ -34,31 +37,17 @@ public class SignUpFragment extends Fragment implements View.OnClickListener  {
 
 
     private void checkingData() {
-        String loginStr, passwordStr, confirmPasswordStr, nameStr, surnameStr;
+        String loginStr, passwordStr, confirmPasswordStr, nameStr, surnameStr, emailStr;
 
         nameStr = name.getText().toString();
         surnameStr = surname.getText().toString();
+        emailStr = email.getText().toString();
         loginStr = login.getText().toString();
         passwordStr = password.getText().toString();
         confirmPasswordStr = confirmPassword.getText().toString();
 
-        boolean isEmpty = false;
-        if (nameStr.isEmpty()) isEmpty = true;
-        else isEmpty = false;
-        if (surnameStr.isEmpty()) isEmpty = true;
-        else isEmpty = false;
-        if (loginStr.isEmpty()) isEmpty = true;
-        else isEmpty = false;
-        if (passwordStr.isEmpty()) isEmpty = true;
-        else isEmpty = false;
-        if (confirmPasswordStr.isEmpty()) isEmpty = true;
-        else isEmpty = false;
+        presenter.checkingData(nameStr, surnameStr, emailStr, loginStr, passwordStr, confirmPasswordStr);
 
-        if (isEmpty) Toast.makeText(getActivity(), "Enter data!", Toast.LENGTH_LONG).show();
-        else {
-            Toast.makeText(getActivity(), "Sign up", Toast.LENGTH_LONG).show();
-            ((RegistrationActivity)getActivity()).showSignInFragment();
-        }
     }
     private void initView() {
         name = (EditText)root.findViewById(R.id.sign_up_name);
@@ -91,5 +80,15 @@ public class SignUpFragment extends Fragment implements View.OnClickListener  {
                 break;
         }
 
+    }
+
+    @Override
+    public void showToast(String message) {
+        Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void showSignInFragment() {
+        ((RegistrationActivity)getActivity()).showSignInFragment();
     }
 }

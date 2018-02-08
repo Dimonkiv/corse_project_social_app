@@ -1,119 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <RelativeLayout
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:background="@drawable/gradient_background">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/profile_fragment_avatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/imageView2"
+            android:layout_above="@+id/profile_fragment_name"
             android:layout_centerHorizontal="true"
             android:src="@drawable/profile_img" />
 
-        <ImageView
+
+        <TextView
+            android:id="@+id/profile_fragment_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/linearLayout"
-            android:layout_alignLeft="@+id/imageView"
-            android:layout_alignStart="@+id/imageView"
-            android:src="@drawable/person"
-            android:id="@+id/imageView2" />
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:layout_margin="10dp"
-            android:id="@+id/linearLayout">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="Dima"
-                android:textSize="32sp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="Ivankiv"
-                android:textSize="32sp"
-                android:layout_marginLeft="5dp"/>
-        </LinearLayout>
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="24dp"
+            android:text="Dima Ivankiv"
+            android:textColor="@color/white"
+            android:textSize="32sp" />
+
 
     </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background_white"
-        android:layout_margin="10dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="25dp"
-            android:orientation="vertical">
+            android:background="@drawable/white_background_with_shadow"
+            android:layout_margin="10dp">
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp">
-                <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="25dp"
+                android:orientation="vertical">
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/email_icon_blue"/>
-                <TextView
-                    android:id="@+id/profile_fragment_email"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/email_icon_blue"/>
+                    <TextView
+                        android:id="@+id/profile_fragment_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dima@gmail.com"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="24sp"/>
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dima@gmail.com"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="24sp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp">
-                <ImageView
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/phone_icon_blue"/>
+                    <TextView
+                        android:id="@+id/profile_fragment_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+38 96 48 15 614"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="24sp"/>
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/phone_icon_blue"/>
-                <TextView
-                    android:id="@+id/profile_fragment_phone"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/website_icon_blue"/>
+                    <TextView
+                        android:id="@+id/profile_fragment_website"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="hildegard.org"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="24sp"/>
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="+38 96 48 15 614"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="24sp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp">
-                <ImageView
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/city_icon_blue"/>
+                    <TextView
+                        android:id="@+id/profile_fragment_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lviv"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="24sp"/>
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/website_icon_blue"/>
-                <TextView
-                    android:id="@+id/profile_fragment_website"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="hildegard.org"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="24sp"/>
-            </LinearLayout>
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/job_icon_blue"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Works at"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="24sp"/>
+                    <TextView
+                        android:id="@+id/profile_fragment_job"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="hildegard.org"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="24sp"/>
+                </LinearLayout>
 
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/container_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99999999"
+        android:clickable="true"
+        android:focusable="false"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress_bar" />
+
+        <TextView
+            android:id="@+id/progress_bar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#222222"
+            android:gravity="center"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+</RelativeLayout>
 
 
 
-</LinearLayout>
+

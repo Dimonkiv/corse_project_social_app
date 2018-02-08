@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/white_background_with_shadow">
+    <TextView
+        android:id="@+id/comment_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="Name"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/darkGrey"
+        android:layout_gravity="center_vertical"/>
+    <TextView
+        android:id="@+id/comment_item_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="iw97dimon@gmail.com"
+        android:textSize="15sp"
+        android:textColor="@color/darkGrey"
+        android:layout_gravity="center_vertical"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/darkGrey"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/comment_item_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="18sp"
+        android:textColor="@color/darkGrey"
+        android:text="Comment body. It is place, where will showed users comment! "/>
+
+</LinearLayout>

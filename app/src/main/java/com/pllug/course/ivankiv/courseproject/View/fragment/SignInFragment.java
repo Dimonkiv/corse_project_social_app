@@ -1,7 +1,8 @@
-package com.pllug.course.ivankiv.courseproject.fragment;
+package com.pllug.course.ivankiv.courseproject.View.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,23 +11,26 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.pllug.course.ivankiv.courseproject.Presenter.SignInPresenter;
 import com.pllug.course.ivankiv.courseproject.R;
-import com.pllug.course.ivankiv.courseproject.RegistrationActivity;
+import com.pllug.course.ivankiv.courseproject.View.Activity.RegistrationActivity;
+import com.pllug.course.ivankiv.courseproject.View.Interface.ContractSignIn;
 
 /**
  * Created by iw97d on 12.01.2018.
  */
 
-public class SignInFragment extends Fragment implements View.OnClickListener {
+public class SignInFragment extends Fragment implements View.OnClickListener, ContractSignIn.view {
     View root;
     private EditText login, password;
     private Button btn;
     private TextView goToForgotPassword, goToSignUp;
-
+    private SignInPresenter presenter;
+    private String loginStr, passwordStr;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.sign_in_fragment, container, false);
-
+        presenter = new SignInPresenter(this);
         //Зв’язуємо xml елементи з кодом
         initView();
         return root;
@@ -51,7 +55,7 @@ public class SignInFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.sign_in_btn:
-                checkingData();
+                getDataFromEditText();
                 break;
             case R.id.go_to_forgot_password:
                 ((RegistrationActivity)getActivity()).showForgotPasswordFragment();
@@ -63,18 +67,21 @@ public class SignInFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void checkingData() {
-        String loginStr, passwordStr;
+    private void getDataFromEditText() {
         loginStr = login.getText().toString();
         passwordStr = password.getText().toString();
+        Log.d("mLog", "Отримали дані з EditText");
+        presenter.chekingData(loginStr, passwordStr);
+    }
 
-        boolean isEmpty = false;
-        if (loginStr.isEmpty()) isEmpty = true;
-        else isEmpty = false;
-        if (passwordStr.isEmpty()) isEmpty = true;
-        else isEmpty = false;
+    @Override
+    public void showToast(String message) {
+        Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+    }
 
-        if (isEmpty) Toast.makeText(getActivity(), "Enter data!", Toast.LENGTH_LONG).show();
-        else ((RegistrationActivity)getActivity()).goToPersonActivity(loginStr, passwordStr);
+    @Override
+    public void goToProfileActivity() {
+        Log.d("mLog", "Передаємо дані в актівіті");
+        ((RegistrationActivity)getActivity()).getSignInDataFromFragment(loginStr, passwordStr);
     }
 }

@@ -1,14 +1,14 @@
-package com.pllug.course.ivankiv.courseproject;
+package com.pllug.course.ivankiv.courseproject.View.Activity;
 
 import android.content.Intent;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.pllug.course.ivankiv.courseproject.R;
 
 public class MainActivity extends AppCompatActivity {
 
