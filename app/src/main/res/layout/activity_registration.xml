@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pllug.course.ivankiv.courseproject.View.Activity.RegistrationActivity">
+    tools:context="com.pllug.course.ivankiv.courseproject.ui.activity.registration.RegistrationActivity">
 
     <FrameLayout
         android:id="@+id/fragment_container"
